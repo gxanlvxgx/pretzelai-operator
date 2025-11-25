@@ -1,0 +1,15 @@
+FROM golang:1.24-bullseye AS builder
+
+WORKDIR /workspace
+
+# Download dependencies first for caching
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the sources and build the manager binary
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/manager main.go
+
+FROM scratch
+COPY --from=builder /workspace/bin/manager /manager
+ENTRYPOINT ["/manager"]

@@ -1,0 +1,19 @@
+domain: pretzelai.local
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: pretzelai-operator
+repo: github.com/gianluigi-romano/pretzelai-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: pretzelai.local
+  group: pretzelai
+  kind: PretzelAI
+  path: github.com/gianluigi-romano/pretzelai-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"

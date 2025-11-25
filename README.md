@@ -102,8 +102,6 @@ kubectl logs -n pretzelai-operator-system -l control-plane=controller-manager -f
 ## License
 
 Licensed under the Apache License, Version 2.0. See `LICENSE` or https://www.apache.org/licenses/LICENSE-2.0 for details.
-# pretzelai-operator
-// TODO(user): Add simple overview of use/purpose
 
 
 ## Getting Started

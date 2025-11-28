@@ -43,13 +43,7 @@ make manifests
 make deploy IMG=pretzelai:local
 ```
 
-4. (Optional) Apply a sample PretzelAI resource (moved to `archive/` in this repo). To test, you can apply `archive/config/samples/pretzelai_v1alpha1_pretzelai.example.yaml` after adjusting `image`/`replicas`.
-
-```bash
-kubectl apply -f archive/config/samples/pretzelai_v1alpha1_pretzelai.example.yaml
-```
-
-5. Port-forward to the PretzelAI pod (assuming the pod is running and listens on 8888):
+4. Port-forward to the PretzelAI pod (assuming the pod is running and listens on 8888):
 
 ```bash
 kubectl get pods -n pretzelai-operator-system
